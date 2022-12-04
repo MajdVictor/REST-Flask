@@ -17,6 +17,8 @@ paths:
       responses:
         "200":
           description: "Successfully read people list"
+        "404":
+          description: "No people found"
     
   /people/{fname}:
     get:
@@ -29,6 +31,8 @@ paths:
       responses:
         "200":
           description: "Successfully read person"
+        "404":
+          description: "person not found"
     put:
       tags:
         - People
