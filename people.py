@@ -5,6 +5,7 @@ from models import Person, people_schema, person_schema
 def read_all():
 
     people = Person.query.all()
+    print(people)
     return people_schema.dump(people)
 
 def read_one(fname):
@@ -17,8 +18,8 @@ def read_one(fname):
         abort(404, f"person with first name {fname} not found!")
 
 
-def create(fname, person):
-    print(person)
+def create(person):
+    
     fname = person.get("fname")
     existing_person = Person.query.filter(Person.fname == fname).one_or_none()
 
